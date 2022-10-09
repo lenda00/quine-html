@@ -1,0 +1,20 @@
+<html><head></head><body>
+<h1>Hello, Quine!</h1>
+<style>
+    * {
+        display:block;
+        white-space: pre-wrap;
+    }
+    h1::before {content:'<h1>'}
+    h1::after {content:'</h1>'}
+    style::before {content:'<style>'}
+    style::after {content:'<\/style>'}
+    script::before {content:'<script>'}
+    script::after {content:'<\/script>'}
+</style>
+</body></html>
+
+<script>
+    var a='var a=bar;var a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()';var a=(foo => {return (a.replace(/bar/,(JSON.stringify(a))))})()
+    console.log(a === eval(eval(a)))
+</script>
